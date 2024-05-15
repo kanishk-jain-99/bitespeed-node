@@ -1,6 +1,8 @@
 import { LuMessageCircle } from "react-icons/lu";
 import { useReactFlow } from "reactflow";
 
+// Component to create node when dragged on to the View Port
+
 export default function AddMessageNode() {
   const reactFlow = useReactFlow();
 

@@ -1,17 +1,17 @@
 import { useRef } from "react";
 import { useReactFlow } from "reactflow";
 
+// Node text edit form
+
 export default function AddMessageForm({ node }) {
   const reactFlow = useReactFlow();
-  const textRef = useRef();
+  const textRef = useRef(null);
 
   const handleChange = (e) => {
     e.preventDefault();
     let currentNodes = reactFlow.getNodes();
-    console.log("selected node", node);
     currentNodes.forEach((ele) => {
       if (ele.id === node.id) {
-        console.log("Found id");
         ele.data.message = textRef.current.value;
       }
     });

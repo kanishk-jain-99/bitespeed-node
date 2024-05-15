@@ -1,7 +1,6 @@
 import type { Edge, EdgeTypes } from "reactflow";
 
+//Incase we want to add some initial edges this is the right place to do it
 export const initialEdges = [] satisfies Edge[];
 
-export const edgeTypes = {
-  // Add your custom edge types here!
-} satisfies EdgeTypes;
+export const edgeTypes = {} satisfies EdgeTypes;

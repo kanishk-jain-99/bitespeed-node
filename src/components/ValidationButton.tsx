@@ -10,9 +10,6 @@ export default function ValidationButton() {
 
     let targetHandles: string[] = [];
 
-    // console.log("Edges: ", currentEdges);
-    // console.log("Nodes: ", currentNodes);
-
     currentEdges.forEach((ele) => {
       targetHandles.push(ele.target);
     });

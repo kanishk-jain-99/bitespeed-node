@@ -1,6 +1,7 @@
 import type { Node, NodeTypes } from "reactflow";
 import { MessageNode } from "./MessageNode";
 
+//attached sample nodes for inital rendering
 export const initialNodes = [
   // {
   //   id: "a",

@@ -10,7 +10,6 @@ import {
   useNodesState,
   useEdgesState,
   Panel,
-  useReactFlow,
 } from "reactflow";
 
 import "reactflow/dist/style.css";
@@ -21,14 +20,13 @@ import AddMessageNode from "./components/AddMessageNode";
 import Wrapper from "./components/Wrapper";
 import AddMessageForm from "./components/AddMessageForm";
 import ValidationButton from "./components/ValidationButton";
-import { BsBack } from "react-icons/bs";
 import { BiArrowBack } from "react-icons/bi";
 
 export default function App() {
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
   const [showSettings, setShowSettings] = useState(false);
   const [nodes, , onNodesChange] = useNodesState(initialNodes);
-  const [error, setError] = useState(false);
+  const [error] = useState(false);
 
   const [selectedNode, setSelectedNode] = useState({});
 
@@ -37,12 +35,12 @@ export default function App() {
     [setEdges]
   );
 
-  const onNodeClick = (event, node) => {
+  const onNodeClick = (_event, node) => {
     setSelectedNode(node);
     setShowSettings(true);
   };
 
-  const handleBackButton = (e) => {
+  const handleBackButton = () => {
     setShowSettings(false);
   };
 
@@ -60,6 +58,7 @@ export default function App() {
         onConnect={onConnect}
         fitView
       >
+        {/* Creating panel for our settings */}
         <Panel position="top-right">
           <ValidationButton />
 
@@ -70,7 +69,9 @@ export default function App() {
               </button>{" "}
               <span className="icon-wa">Message</span>
             </div>
-
+            {/* showing settings when Node is clicked. 
+            PS: if we want to add more types of Nodes or Add more fields in Node we can extend it 
+            by creating code for the same below*/}
             {showSettings ? (
               <AddMessageForm node={selectedNode} />
             ) : (

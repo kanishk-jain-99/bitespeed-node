@@ -8,11 +8,12 @@ export type MessageNodeData = {
   message?: string;
 };
 
+//Below is the Component for our custom node with handler properties
+
 export function MessageNode({ data, selected }: NodeProps<MessageNodeData>) {
   const [sourceConnectable, setSourceConnectable] = useState(true);
 
   return (
-    // We add this class to use the same styles as React Flow's default nodes.
     <div className={selected ? "node-selected" : "node"}>
       <Handle
         type="target"
