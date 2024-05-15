@@ -30,7 +30,8 @@ export default function AddMessageNode() {
         <span>
           <LuMessageCircle color="lightblue" size={30} />
         </span>
-        <span>Message</span>
+        <span>Message Node</span>
+        <span>Drag Me!</span>
       </button>
     </div>
   );
